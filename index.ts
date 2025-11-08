@@ -16,6 +16,10 @@ Bun.serve({
   async fetch(req) {
     const url = new URL(req.url);
 
+    if (url.pathname === "/health") {
+      return new Response("OK", { status: 200 });
+    }
+
     if (url.pathname === "/webhook" && req.method === "POST") {
       try {
         const body = (await req.json()) as SNSMessage;
