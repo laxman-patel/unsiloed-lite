@@ -1,0 +1,5 @@
+fitz==0.0.1.dev2
+pdf2image==1.17.0
+pdfplumber==0.11.7
+Pillow==12.0.0
+pytesseract==0.3.13
