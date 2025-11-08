@@ -25,6 +25,7 @@ Bun.serve({
         const body = (await req.json()) as SNSMessage;
 
         if (body.Type === "SubscriptionConfirmation") {
+          console.log("Subscription Confirmed:", body.SubscribeURL);
           await fetch(body.SubscribeURL);
           return new Response("Subscribed", { status: 200 });
         }
